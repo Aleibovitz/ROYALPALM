@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Royal Palm Aerial Photography | Drone Photo &amp; Video in Naples, FL</title>
+<meta name="description" content="FAA-certified aerial photography and video for luxury real estate, custom-home builders and estate owners in Naples, Marco Island and Collier County, Florida.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@400;500;600&display=swap">
+<style>
+:root{
+  --navy:#0E2A3B; --navy-deep:#0A2030; --navy-soft:#163747;
+  --teal:#1F5F67; --gold:#B8893A; --gold-btn:#D4A955; --gold-light:#E6C88F;
+  --mist:#F4F8F8; --line:#E3E8EA; --body:#45555F; --muted:#55656F;
+  --serif:'Cormorant Garamond', Georgia, serif;
+  --sans:'Montserrat', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--sans);color:var(--navy);background:#fff;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--teal)}a:hover{color:var(--navy)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.32em;color:var(--teal);text-transform:uppercase}
+.dark .eyebrow{color:var(--gold-light)}
+h1,h2{font-family:var(--serif);font-weight:500;margin:0}
+h2{font-size:clamp(34px,4.5vw,48px);line-height:1.1}
+h3{margin:0;font-size:18px;font-weight:600}
+p{margin:0}
+.section{padding:96px 0}
+.section-head{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;margin-bottom:56px}
+.btn{display:inline-block;text-decoration:none;padding:15px 28px;border-radius:4px;font-weight:600;font-size:15px;text-align:center;border:1px solid transparent;cursor:pointer;font-family:inherit}
+.btn-navy{background:var(--navy);color:#fff}.btn-navy:hover{background:var(--teal);color:#fff}
+.btn-gold{background:var(--gold-btn);color:var(--navy)}.btn-gold:hover{background:var(--gold-light);color:var(--navy)}
+.btn-ghost{border-color:var(--gold-light);color:#fff}.btn-ghost:hover{background:rgba(230,200,143,.12);color:#fff}
+.btn-outline{border-color:var(--navy);color:var(--navy)}.btn-outline:hover{background:var(--navy);color:#fff}
+.placeholder{border:1px dashed #9AAAB2;background:#E8F0F1;color:var(--muted);display:flex;align-items:center;justify-content:center;text-align:center;font-size:14px;line-height:1.6;padding:24px}
+.dark .placeholder{border-color:#5E7A88;background:var(--navy-soft);color:#B9C7CE}
+.media{width:100%;height:100%;object-fit:cover}
+
+/* Header */
+.site-header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.site-header .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:16px;padding-bottom:16px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--navy)}
+.brand-name{display:flex;flex-direction:column;gap:3px}
+.brand-name b{font-family:var(--serif);font-weight:600;font-size:24px;line-height:1;letter-spacing:.08em}
+.brand-name small{font-size:9px;font-weight:500;letter-spacing:.38em}
+.nav{display:flex;flex-wrap:wrap;align-items:center;gap:8px 28px;font-size:14px;font-weight:500}
+.nav a{color:var(--navy);text-decoration:none}
+.nav a:hover{color:var(--teal)}
+.nav .btn{padding:12px 22px;color:#fff}
+
+/* Hero */
+.hero{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.hero-mark{position:absolute;right:-160px;top:-60px;width:720px;height:720px;opacity:.09;pointer-events:none}
+.hero .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:56px;padding-top:96px;padding-bottom:104px;position:relative}
+.hero-copy{flex:1 1 440px;min-width:0;display:flex;flex-direction:column;gap:24px}
+.hero h1{font-size:clamp(46px,6vw,68px);line-height:1.02}
+.hero h1 em{color:var(--gold-light)}
+.hero-copy p{font-size:18px;line-height:1.6;color:#D5DEE2;max-width:520px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px}
+.hero-media{flex:1 1 400px;min-width:0;height:400px;border-radius:6px;overflow:hidden}
+
+/* Trust strip */
+.trust{background:var(--mist);border-bottom:1px solid var(--line)}
+.trust .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 48px;padding-top:22px;padding-bottom:22px;font-size:13px;font-weight:600;letter-spacing:.14em;color:var(--teal);text-transform:uppercase}
+
+/* Cards */
+.grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{border:1px solid var(--line);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;background:#fff}
+.card-media{height:170px}
+.card-body{padding:24px;display:flex;flex-direction:column;gap:10px}
+.card-body p{font-size:15px;line-height:1.6;color:var(--body)}
+
+/* Packages */
+.packages{background:var(--mist)}
+.pkg-grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));align-items:stretch}
+.pkg{background:#fff;border:1px solid var(--line);border-radius:6px;padding:36px;display:flex;flex-direction:column;gap:18px}
+.pkg h3{font-size:20px}
+.price{font-family:var(--serif);font-size:44px;font-weight:600;line-height:1}
+.price span{font-family:var(--sans);font-size:15px;font-weight:500;color:var(--muted)}
+.pkg p{font-size:15px;line-height:1.6;color:var(--body)}
+.pkg ul{margin:0;padding-left:20px;font-size:15px;line-height:2;color:#2B3B45}
+.pkg .btn{margin-top:auto}
+.pkg.featured{background:var(--navy);border-color:var(--navy);color:#fff}
+.pkg.featured .price{color:var(--gold-light)}
+.pkg.featured p{color:#D5DEE2}
+.pkg.featured ul{color:#E8EEF0}
+.pkg-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.badge{font-size:11px;font-weight:600;letter-spacing:.2em;color:var(--navy);background:var(--gold-light);padding:6px 10px;border-radius:3px}
+
+/* Steps */
+.steps{display:grid;gap:32px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.step{display:flex;flex-direction:column;gap:12px}
+.step-num{font-family:var(--serif);font-size:56px;font-weight:600;line-height:1;color:var(--gold)}
+.step p{font-size:15px;line-height:1.6;color:var(--body)}
+
+/* About */
+.about{background:var(--navy);color:#fff}
+.about .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:56px}
+.about-media{flex:1 1 340px;min-width:0;height:380px;border-radius:6px;overflow:hidden}
+.about-copy{flex:1 1 460px;min-width:0;display:flex;flex-direction:column;gap:20px}
+.about-copy p{font-size:16px;line-height:1.7;color:#D5DEE2}
+
+/* Contact */
+.contact .wrap{display:flex;flex-wrap:wrap;gap:56px}
+.contact-info{flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:18px}
+.contact-info p{font-size:16px;line-height:1.7;color:var(--body)}
+.contact-lines{display:flex;flex-direction:column;gap:8px;font-size:15px;margin-top:8px}
+.contact-lines .phone{color:var(--navy);font-weight:600}
+.contact-lines span{color:var(--body)}
+form{flex:1 1 500px;min-width:0;display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+label{display:flex;flex-direction:column;gap:8px;font-size:13px;font-weight:600}
+.full{grid-column:1/-1}
+input,select,textarea{font:inherit;font-weight:400;font-size:15px;padding:13px 14px;border:1px solid #B9C4CA;border-radius:4px;background:#fff;color:var(--navy);width:100%}
+textarea{resize:vertical;min-height:110px}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--teal);outline-offset:1px;border-color:var(--teal)}
+.hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+.form-actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px}
+.form-status{font-size:14px;font-weight:500}
+.form-status.ok{color:#1E6B3A}.form-status.err{color:#A3282B}
+
+/* Footer */
+.site-footer{background:var(--navy-deep);color:#B9C7CE}
+.site-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px;padding-top:48px;padding-bottom:48px;font-size:13px}
+.site-footer .brand-name b{color:#fff;font-size:22px}
+.site-footer .brand-name small{color:var(--gold-light)}
+.footer-links{display:flex;flex-wrap:wrap;gap:24px}
+.footer-links a{color:#B9C7CE;text-decoration:none}.footer-links a:hover{color:#fff}
+
+@media (max-width:640px){
+  .section{padding:72px 0}
+  .hero .wrap{padding-top:64px;padding-bottom:72px}
+  .hero-media{height:260px}
+  .about-media{height:280px}
+  .nav{gap:8px 18px}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Royal Palm Aerial Photography, home">
+      <img src="assets/logo-mark.svg" width="48" height="48" alt="">
+      <span class="brand-name"><b>ROYAL PALM</b><small>AERIAL PHOTOGRAPHY</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#packages">Packages</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-navy" href="#contact">Book a shoot</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero dark" id="top">
+  <img class="hero-mark" src="assets/logo-mark-gold.svg" alt="">
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="eyebrow">Naples · Marco Island · Collier County</div>
+      <h1>Naples, seen <em>from above.</em></h1>
+      <p>FAA-certified aerial photography and video for luxury real estate, custom-home builders and estate owners across Southwest Florida.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#contact">Book a shoot</a>
+        <a class="btn btn-ghost" href="#packages">View packages</a>
+      </div>
+    </div>
+    <div class="hero-media placeholder">
+      <!-- REPLACE with: <img class="media" src="images/hero.jpg" alt="Aerial view of a Naples waterfront estate at golden hour"> -->
+      [Hero image]<br>Overhead shot of a Naples waterfront estate at golden hour
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap">
+    <span>FAA Part 107 certified</span>
+    <span>Fully insured</span>
+    <span>Naples-based</span>
+    <span>[Turnaround] delivery</span>
+  </div>
+</div>
+
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What we capture</div>
+      <h2>A perspective only the air can give</h2>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <div class="card-media placeholder"><!-- <img class="media" src="images/listing.jpg" alt="..."> -->[Listing photo]</div>
+        <div class="card-body">
+          <h3>Luxury listings</h3>
+          <p>Aerial stills and cinematic video that show the water, the lot and the neighborhood the way buyers want to see them.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-media placeholder"><!-- <img class="media" src="images/estate.jpg" alt="..."> -->[Roof &amp; dock photo]</div>
+        <div class="card-body">
+          <h3>Estate condition reports</h3>
+          <p>Pre-season and after-storm aerial checks of roofs, docks and grounds for owners who are away, with dated images for insurance.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-media placeholder"><!-- <img class="media" src="images/construction.jpg" alt="..."> -->[Construction site photo]</div>
+        <div class="card-body">
+          <h3>Construction progress</h3>
+          <p>Monthly flights from the same angles, so builders and owners can track a custom home from slab to final.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-media placeholder"><!-- <img class="media" src="images/community.jpg" alt="..."> -->[Golf course photo]</div>
+        <div class="card-body">
+          <h3>Communities &amp; clubs</h3>
+          <p>Marketing imagery for HOAs, golf and country clubs, marinas and commercial properties.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section packages" id="packages">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Packages</div>
+      <h2>Simple, clear pricing</h2>
+    </div>
+    <div class="pkg-grid">
+      <div class="pkg">
+        <h3>Listing Aerials</h3>
+        <div class="price">[Your price]</div>
+        <p>For standard residential listings.</p>
+        <ul>
+          <li>[Number] edited aerial photos</li>
+          <li>MLS-ready sizes</li>
+          <li>Property line overlay</li>
+        </ul>
+        <a class="btn btn-outline" href="#contact" data-service="Listing Aerials">Book Listing Aerials</a>
+      </div>
+      <div class="pkg featured">
+        <div class="pkg-top">
+          <h3>Signature Film</h3>
+          <span class="badge">MOST POPULAR</span>
+        </div>
+        <div class="price">[Your price]</div>
+        <p>For luxury and waterfront homes.</p>
+        <ul>
+          <li>Everything in Listing Aerials</li>
+          <li>[Length] cinematic aerial video</li>
+          <li>Twilight flight</li>
+          <li>Vertical cut for social media</li>
+        </ul>
+        <a class="btn btn-gold" href="#contact" data-service="Signature Film">Book Signature Film</a>
+      </div>
+      <div class="pkg">
+        <h3>Estate Watch</h3>
+        <div class="price">[Your price]<span> / visit</span></div>
+        <p>For seasonal owners and their managers.</p>
+        <ul>
+          <li>Roof, dock and grounds survey</li>
+          <li>Dated report by email</li>
+          <li>Priority after-storm flights</li>
+        </ul>
+        <a class="btn btn-outline" href="#contact" data-service="Estate Watch">Ask about Estate Watch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">How it works</div>
+      <h2>Three easy steps</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Book</h3>
+        <p>Tell us the address and what you need. We check airspace and weather and confirm a time.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>Fly</h3>
+        <p>A licensed, insured pilot flies the property, usually in under an hour, with no need for you to be there.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Receive</h3>
+        <p>Edited photos and video arrive by download link within [turnaround], ready for MLS and social media.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section about dark" id="about">
+  <div class="wrap">
+    <div class="about-media placeholder"><!-- <img class="media" src="images/anthony.jpg" alt="Anthony Leibovitz with drone"> -->[Your photo with the drone]</div>
+    <div class="about-copy">
+      <div class="eyebrow">About</div>
+      <h2>Precision you can trust</h2>
+      <p>Royal Palm Aerial is owned and flown by Anthony Leibovitz, a 30-year technology leader who managed large engineering programs at Microsoft before moving to Naples. He brings the same discipline to every flight: careful planning, safety first and results delivered when promised.</p>
+      <p>Every shoot is flown by an FAA Part 107 certified pilot and covered by commercial drone liability insurance.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <div class="wrap">
+    <div class="contact-info">
+      <div class="eyebrow">Contact</div>
+      <h2>Book a shoot</h2>
+      <p>Send the property details and we will reply within one business day with availability and a quote.</p>
+      <div class="contact-lines">
+        <a class="phone" href="tel:+1XXXXXXXXXX">[Phone]</a>
+        <a href="mailto:hello@royalpalmaerial.com">hello@royalpalmaerial.com</a>
+        <span>Serving Naples, Marco Island, Bonita Springs and Collier County</span>
+      </div>
+    </div>
+    <form id="contact-form" novalidate>
+      <label>Name<input name="name" type="text" autocomplete="name" required maxlength="120"></label>
+      <label>Email<input name="email" type="email" autocomplete="email" required maxlength="200"></label>
+      <label>Phone<input name="phone" type="tel" autocomplete="tel" maxlength="40"></label>
+      <label>Service
+        <select name="service">
+          <option>Listing Aerials</option>
+          <option>Signature Film</option>
+          <option>Estate Watch</option>
+          <option>Construction progress</option>
+          <option>Something else</option>
+        </select>
+      </label>
+      <label class="full">Property address<input name="address" type="text" autocomplete="street-address" maxlength="300"></label>
+      <label class="full">Anything we should know?<textarea name="message" rows="4" maxlength="4000"></textarea></label>
+      <div class="hp" aria-hidden="true"><label>Company<input name="company" type="text" tabindex="-1" autocomplete="off"></label></div>
+      <div class="full form-actions">
+        <button class="btn btn-navy" type="submit">Request a quote</button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="brand-name"><b>ROYAL PALM</b><small>AERIAL PHOTOGRAPHY</small></span>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="#services">Services</a>
+      <a href="#packages">Packages</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <span>© <span id="year">2027</span> Royal Palm Aerial LLC · Naples, Florida</span>
+  </div>
+</footer>
+
+<script>
+// Where the form posts. Default: the Azure Function in /api (see README).
+// To use Formspree instead, set this to your Formspree URL, e.g. "https://formspree.io/f/abcdwxyz".
+const FORM_ENDPOINT = "/api/contact";
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// Package buttons preselect the matching service in the form.
+document.querySelectorAll("[data-service]").forEach(function (a) {
+  a.addEventListener("click", function () {
+    const sel = document.querySelector('#contact-form select[name="service"]');
+    if (sel) sel.value = a.getAttribute("data-service");
+  });
+});
+
+(function () {
+  const form = document.getElementById("contact-form");
+  const status = document.getElementById("form-status");
+  const button = form.querySelector('button[type="submit"]');
+
+  function show(msg, ok) {
+    status.textContent = msg;
+    status.className = "form-status " + (ok ? "ok" : "err");
+  }
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(form).entries());
+    if (!data.name || !data.name.trim()) return show("Please enter your name.", false);
+    if (!data.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) return show("Please enter a valid email address.", false);
+
+    button.disabled = true;
+    show("Sending…", true);
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(data)
+      });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      form.reset();
+      show("Thank you. We will be in touch within one business day.", true);
+    } catch (err) {
+      show("Sorry, that didn't go through. Please email hello@royalpalmaerial.com.", false);
+    } finally {
+      button.disabled = false;
+    }
+  });
+})();
+</script>
+</body>
+</html>
