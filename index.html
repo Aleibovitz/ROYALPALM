@@ -148,6 +148,16 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--teal);outline-of
 .viewer iframe{width:100%;height:calc(100% - 52px);border:none;background:#fff}
 body.modal-open{overflow:hidden}
 
+/* Photo lightbox */
+.card-media img{cursor:zoom-in;transition:transform .3s}
+.card-media img:hover{transform:scale(1.04)}
+.lightbox{padding:0;border:none;background:transparent;max-width:94vw;max-height:92vh;overflow:visible}
+.lightbox::backdrop{background:rgba(10,32,48,.88)}
+.lightbox img{max-width:94vw;max-height:84vh;width:auto;height:auto;border-radius:6px;box-shadow:0 20px 60px rgba(0,0,0,.5);cursor:zoom-out}
+.lightbox p{color:#E8EEF0;text-align:center;font-size:15px;margin-top:12px}
+.lightbox button{position:fixed;top:14px;right:20px;background:none;border:none;color:var(--gold-light);font-size:40px;line-height:1;cursor:pointer}
+.lightbox button:hover{color:#fff}
+
 @media (max-width:640px){
   .section{padding:72px 0}
   .hero .wrap{padding-top:64px;padding-bottom:72px}
@@ -396,6 +406,12 @@ body.modal-open{overflow:hidden}
   <iframe id="viewer-frame" title="Document viewer"></iframe>
 </dialog>
 
+<dialog id="lightbox" class="lightbox" aria-label="Enlarged photo">
+  <button type="button" id="lightbox-close" aria-label="Close">&times;</button>
+  <img id="lightbox-img" src="" alt="">
+  <p id="lightbox-caption"></p>
+</dialog>
+
 <script>
 // Where the form posts. Default: the Azure Function in /api (see README).
 // To use Formspree instead, set this to your Formspree URL, e.g. "https://formspree.io/f/abcdwxyz".
@@ -431,6 +447,29 @@ document.querySelectorAll("[data-service]").forEach(function (a) {
   document.getElementById("viewer-close").addEventListener("click", close);
   dlg.addEventListener("click", function (e) { if (e.target === dlg) close(); });
   dlg.addEventListener("close", function () { document.body.classList.remove("modal-open"); frame.src = "about:blank"; });
+})();
+
+// Photo lightbox: click a service photo to see it full size.
+(function () {
+  const box = document.getElementById("lightbox");
+  const img = document.getElementById("lightbox-img");
+  const cap = document.getElementById("lightbox-caption");
+  if (!box || typeof box.showModal !== "function") return;
+  document.querySelectorAll(".card-media img").forEach(function (pic) {
+    pic.addEventListener("click", function () {
+      img.src = pic.currentSrc || pic.src;
+      const card = pic.closest(".card");
+      const h = card ? card.querySelector("h3") : null;
+      cap.textContent = h ? h.textContent : "";
+      img.alt = pic.alt && pic.alt !== "..." ? pic.alt : cap.textContent;
+      document.body.classList.add("modal-open");
+      box.showModal();
+    });
+  });
+  function close() { box.close(); }
+  document.getElementById("lightbox-close").addEventListener("click", close);
+  box.addEventListener("click", function (e) { if (e.target !== document.getElementById("lightbox-close")) close(); });
+  box.addEventListener("close", function () { document.body.classList.remove("modal-open"); img.src = ""; });
 })();
 
 (function () {
