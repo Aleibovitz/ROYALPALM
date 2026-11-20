@@ -130,6 +130,15 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--teal);outline-of
 .footer-links{display:flex;flex-wrap:wrap;gap:24px}
 .footer-links a{color:#B9C7CE;text-decoration:none}.footer-links a:hover{color:#fff}
 
+/* Document viewer (modal) */
+.viewer{width:min(900px,92vw);height:86vh;padding:0;border:none;border-radius:8px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.viewer::backdrop{background:rgba(14,42,59,.65)}
+.viewer-bar{display:flex;justify-content:space-between;align-items:center;background:var(--navy);color:#fff;padding:12px 18px;font-family:var(--serif);font-size:20px;border-bottom:3px solid var(--gold)}
+.viewer-bar button{background:none;border:none;color:var(--gold-light);font-size:30px;line-height:1;cursor:pointer;padding:0 4px}
+.viewer-bar button:hover{color:#fff}
+.viewer iframe{width:100%;height:calc(100% - 52px);border:none;background:#fff}
+body.modal-open{overflow:hidden}
+
 @media (max-width:640px){
   .section{padding:72px 0}
   .hero .wrap{padding-top:64px;padding-bottom:72px}
@@ -287,7 +296,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--teal);outline-of
       <div class="step">
         <div class="step-num">02</div>
         <h3>Sign and book</h3>
-        <p>Approve the quote, e-sign <A href="/docs/serviceagreement.pdf" target="_blank" rel="noopener noreferrer">our service agreement</A> and pay online. Your date is reserved once payment is received.</p>
+        <p>Approve the quote, e-sign <a href="/docs/serviceagreement.pdf" class="open-modal" data-title="Client Services Agreement">our service agreement</a> and pay online. Your date is reserved once payment is received.</p>
       </div>
       <div class="step">
         <div class="step-num">03</div>
@@ -364,6 +373,14 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--teal);outline-of
   </div>
 </footer>
 
+<dialog id="viewer" class="viewer" aria-labelledby="viewer-title">
+  <div class="viewer-bar">
+    <span id="viewer-title"></span>
+    <button type="button" id="viewer-close" aria-label="Close">&times;</button>
+  </div>
+  <iframe id="viewer-frame" title="Document viewer"></iframe>
+</dialog>
+
 <script>
 // Where the form posts. Default: the Azure Function in /api (see README).
 // To use Formspree instead, set this to your Formspree URL, e.g. "https://formspree.io/f/abcdwxyz".
@@ -378,6 +395,28 @@ document.querySelectorAll("[data-service]").forEach(function (a) {
     if (sel) sel.value = a.getAttribute("data-service");
   });
 });
+
+// Document viewer: links with class="open-modal" open in a modal on larger screens, in a new tab on phones.
+(function () {
+  const dlg = document.getElementById("viewer");
+  const frame = document.getElementById("viewer-frame");
+  const title = document.getElementById("viewer-title");
+  if (!dlg || typeof dlg.showModal !== "function") return; // very old browsers: links open normally
+  function close() { dlg.close(); }
+  document.querySelectorAll("a.open-modal").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      if (window.innerWidth < 700) { a.target = "_blank"; a.rel = "noopener"; return; }
+      e.preventDefault();
+      frame.src = a.getAttribute("href");
+      title.textContent = a.dataset.title || "";
+      document.body.classList.add("modal-open");
+      dlg.showModal();
+    });
+  });
+  document.getElementById("viewer-close").addEventListener("click", close);
+  dlg.addEventListener("click", function (e) { if (e.target === dlg) close(); });
+  dlg.addEventListener("close", function () { document.body.classList.remove("modal-open"); frame.src = "about:blank"; });
+})();
 
 (function () {
   const form = document.getElementById("contact-form");
