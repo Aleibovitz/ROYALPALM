@@ -97,6 +97,10 @@ p{margin:0}
 .step-num{font-family:var(--serif);font-size:56px;font-weight:600;line-height:1;color:var(--gold)}
 .step p{font-size:15px;line-height:1.6;color:var(--body)}
 
+.launch-banner{background:var(--gold-btn);color:var(--navy);text-align:center;padding:10px 20px;font-size:14px;line-height:1.5}
+.launch-banner strong{letter-spacing:.06em}
+.launch-banner a{color:var(--navy);font-weight:600}
+  
 /* About */
 .about{background:var(--navy);color:#fff}
 .about .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:56px}
@@ -149,7 +153,9 @@ body.modal-open{overflow:hidden}
 </style>
 </head>
 <body>
-
+<div class="launch-banner">
+  <strong>Opening January 2027</strong> · FAA Part 107 certification and $1M liability insurance in place before our first flight. <a href="#contact">Request a quote to reserve an early date.</a>
+</div>
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Royal Palm Aerial Photography, home">
@@ -444,7 +450,7 @@ document.querySelectorAll("[data-service]").forEach(function (a) {
       });
       if (!res.ok) throw new Error("HTTP " + res.status);
       form.reset();
-      show("Thank you. We will be in touch within one business day.", true);
+      show("Thank you. We open in January 2027 and will be in touch within one business day to reserve your date.", true);
     } catch (err) {
       show("Sorry, that didn't go through. Please email hello@royalpalmaerial.com.", false);
     } finally {
